@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Isoldier</string>
+
+
+<string name="admob_test_inter">ca-app-pub-3940256099942544/1033173712</string>
+
+
+    <string name="admob_test_banner">ca-app-pub-3940256099942544/6300978111
+    </string>
+    <string name="admob_banner">ca-app-pub-7298010269367658/3202061106
+    </string>
+
+
+    <string name="admob_inter">ca-app-pub-7298010269367658/7367441289</string>
+</resources>

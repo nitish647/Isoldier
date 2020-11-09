@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_update"
+        android:layout_marginHorizontal="15dp"
+        android:weightSum="10"
+android:paddingHorizontal="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_gridview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.357">
+<TextView
+    android:text="iSoldier - GD"
+    android:gravity="center"
+    android:layout_marginStart="5dp"
+
+    android:textColor="@android:color/white"
+    android:textSize="30sp"
+    android:background="@android:color/black"
+    android:layout_weight="3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</TextView>
+        <TextView
+            android:layout_marginEnd="5dp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="Updates"
+            android:background="#F1B215"
+            android:layout_weight="7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TextView>
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/main_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/gridview_curve"
+        android:gravity="center"
+        android:numColumns="3"
+        android:paddingTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    </GridView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
