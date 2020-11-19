@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.FtsOptions;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -18,12 +19,17 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Update_activity extends AppCompatActivity {
@@ -39,7 +45,41 @@ public class Update_activity extends AppCompatActivity {
         recyclerView  =(RecyclerView)findViewById(R.id.update_recycler);
       //  db.document("moneyvio/updates").get().getResult().getData();
    //     CollectionReference collectionReference = db.collection("isoldier");
+        test_text.append("hjashjashj");
         DocumentReference documentReference =  db.collection("isoldier").document("test");
+db.collection("isoldier").orderBy("test", Query.Direction.ASCENDING).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+    @Override
+    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+        QueryDocumentSnapshot queryDocumentSnapshots = null;
+        if(task.isComplete())
+
+        {
+
+            List<String> list = new ArrayList<>();
+            for (QueryDocumentSnapshot document : task.getResult()) {
+                list.add(document.getId());
+
+            }
+            test_text.append(list.toString());
+//  for (QueryDocumentSnapshot document : task.getResult()) {
+//
+//                test_text.append("doc "+document.getData().toString());
+//
+//            }
+
+
+
+        }
+        else
+
+            test_text.setText("not successfull");
+
+    }}).addOnFailureListener(new OnFailureListener() {
+    @Override
+    public void onFailure(@NonNull Exception e) {
+        test_text.setText(e.toString());
+    }
+});
 
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -58,7 +98,7 @@ public class Update_activity extends AppCompatActivity {
                             JSONArray jsonArray = new JSONArray(hashMap.values());
                             for (int i = 0;i<jsonArray.length();i++)
                             {    jsonObject =  jsonArray.getJSONObject(i);
-                                test_text.append("hashmap :"+jsonObject.getString("url"));
+                         //       test_text.append("hashmap :"+jsonObject.getString("url"));
 
                             }
 //                            JSONObject jsonObject = new JSONObject( hashMap.get("qwerty1").toString());

@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 public class Post_update_activity extends AppCompatActivity {
 FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-EditText edit_title,edit_url,edit_description;
+EditText edit_title,edit_url,edit_description,edit_update_number,edit_update_date;
 Button update_btn,color_btn,preview_btn;
 Spinner spinner;
     ArrayList<Integer> color_list;
@@ -36,6 +36,8 @@ Spinner spinner;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_update_activity);
 edit_description  =(EditText)findViewById(R.id.edit_update_desc);
+edit_update_number =(EditText)findViewById(R.id.update_number);
+edit_update_date =(EditText)findViewById(R.id.edit_date_picker) ;
         edit_title =(EditText)findViewById(R.id.edit_update_title);
         edit_url  =(EditText)findViewById(R.id.edit_update_url);
         preview_btn =(Button)findViewById(R.id.preview_btn) ;
@@ -82,8 +84,9 @@ HashMap hashMap1 = new HashMap(0);
         hashMap1.put("title",edit_title.getText().toString());
         hashMap1.put("description",edit_description.getText().toString());
         hashMap1.put("url",edit_url.getText().toString());
+        hashMap1.put("date",edit_update_date.getText().toString());
         hashMap1.put("color",color_list.get(spinner.getSelectedItemPosition()));
-        hashMap.put(edit_title.getText().toString(),hashMap1);
+        hashMap.put(edit_update_number.getText().toString(),hashMap1);
 
         return hashMap;
     }

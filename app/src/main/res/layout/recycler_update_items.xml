@@ -14,6 +14,21 @@
         android:layout_width="match_parent"
         android:layout_height="180dp">
 
+        <Button
+            android:id="@+id/btn_update_number"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circle_btn"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/updte_title"
+            app:layout_constraintHorizontal_bias=".3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05">
+
+        </Button>
+
         <ImageView
             android:id="@+id/update_imageView"
 android:src="@drawable/update_icon2"
@@ -40,25 +55,23 @@ android:src="@drawable/update_icon2"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.392"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.128">
+            app:layout_constraintVertical_bias="0.146">
 
         </TextView>
 
         <TextView
             android:id="@+id/updte_description"
 
-            android:layout_width="215dp"
+            android:layout_width="200dp"
             android:layout_height="100dp"
 
-            android:padding="5dp"
+
             android:textColor="#79848D"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.392"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/updte_title"
             app:layout_constraintVertical_bias="1.0">
@@ -66,15 +79,19 @@ android:src="@drawable/update_icon2"
         </TextView>
 
         <TextView
-            android:id="@+id/date_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="2dp"
+            android:id="@+id/update_date"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/updte_description"
-            app:layout_constraintHorizontal_bias="0.398"
-            app:layout_constraintStart_toStartOf="parent"
+android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="parent"
 
-            app:layout_constraintVertical_bias="0.319">
+            app:layout_constraintStart_toEndOf="@+id/updte_description"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8">
 
         </TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>

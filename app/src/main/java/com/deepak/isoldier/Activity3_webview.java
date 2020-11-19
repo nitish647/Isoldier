@@ -15,6 +15,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.firebase.firestore.Query;
 
 import java.awt.font.TextAttribute;
 import java.io.IOException;
@@ -44,7 +45,6 @@ Button back_btn;
 
         topic.setText(topic_text);
         topic.setTextColor(Color.WHITE);
-
         // google ads
 
         AdRequest adRequest = new AdRequest.Builder().build();

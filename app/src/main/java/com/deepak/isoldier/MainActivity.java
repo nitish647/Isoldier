@@ -127,8 +127,13 @@ startActivity(intent);}
             }
         });
 
-
-
+updte_linear.setOnLongClickListener(new View.OnLongClickListener() {
+    @Override
+    public boolean onLongClick(View view) {
+//        startActivity(new Intent(view.getContext(),Post_update_activity.class));
+        return  true;
+    }
+});
 
     }
 
@@ -174,6 +179,8 @@ public void show_dialog()
     Button share = (Button)custom_dialog_layout.findViewById(R.id.share);
     Button more_apps = (Button)custom_dialog_layout.findViewById(R.id.more_apps);
 privacy.setBackground(btn_background("#C832D1"));
+share.setBackground(btn_background("#33B5E5"));
+more_apps.setBackground(btn_background("#FF8800"));
     privacy.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -207,7 +214,7 @@ share.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.deepak.isoldier"));
+            intent.setData(Uri.parse("https://play.google.com/store/apps/developer?id=Tech+Support+SR."));
 
              startActivity(intent);
         }
